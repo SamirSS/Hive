@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Hive</title>
+  </head>
+  <body>
+      <nav>
+       
+        <h1>Welcome</h1>
+        <br>
+        <h3> Sign up </h3>
+        <form method="POST" action="/teacher_sign_up">
+          <input type="text" name="teacher_name" placeholder="Teacher Sign-Up">
+          <br><br>
+          <input type="submit">
+        </form>
+        <form method="POST" action="/student_sign_up">
+          <input type="text" name="student_name" placeholder="Student Sign-Up">
+          <br><br>
+          <input type="submit">
+        </form>
+        <form method="POST" action="/teacher_login">
+          <input type="text" name="name" placeholder="Teacher Name">
+          <br> <br>
+          <input type="submit">
+          <h1> <br> </h1>
+        </form>
+        <form method="POST" action="/student_login">
+          <input type="text" name="name" placeholder="Student Name">
+          <br> <br>
+      </nav>
+
+      <%= yield %>
+
+      <footer>
+      </footer>
+  </body>
+</html>
