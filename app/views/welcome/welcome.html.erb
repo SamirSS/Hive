@@ -8,11 +8,12 @@
   </head>
   <body> -->
       
-    <h1>Welcome</h1>
+    <h1>Welcome to Hive</h1>
     <br>
     <h4> Teacher Sign Up </h4>
     <form method="POST" action="/teacher_sign_up">
-      <input type="text" name="teacher_name" placeholder="Teacher Name">
+      <input type="text" name="name" placeholder="Teacher Name"> <br>
+       <input type="text" name="password" placeholder="Password">
       <br><br>
       <input type="submit">
     </form>
@@ -20,9 +21,11 @@
     <h4> Teacher Login </h4>
     <form method="POST" action="/teacher_login">
       <input type="text" name="name" placeholder="Teacher Name">
+      <br>
+       <input type="text" name="password" placeholder="Password">
       <br> <br>
       <input type="submit">
-      <h1> <br> </h1>
+      <br> <br><br>
     </form>
     
     <h4> Student Sign Up </h4>
@@ -35,11 +38,12 @@
     <h4> Student Login </h4>
     <form method="POST" action="/student_login">
       <input type="text" name="name" placeholder="Student Name">
+      <br><br> 
       <input type="submit">
-      <br> <br>
     </form>
     
     <form method="POST" action="/logout">
+      <br><br>
       <input type="submit" value="Logout">
       <br>
     </form>

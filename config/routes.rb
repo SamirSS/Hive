@@ -6,12 +6,29 @@ Rails.application.routes.draw do
   root 'welcome#welcome'
 
   # Example of regular route:
-  post '/teacher_sign_up', to: 'welcome#welcome'
-  post '/student_sign_up', to: 'welcome#welcome'
-  post '/teacher_login', to: 'welcome#welcome'
-  post '/student_login', to: 'welcome#welcome'
-  post '/teacher_logout', to: 'welcome#welcome'
-  post '/student_logout', to: 'welcome#welcome'
+#   post '/teacher_sign_up', to: 'teachers#new'
+#   post '/student_sign_up', to: 'teachers#new'
+#   post '/teacher_login', to: 'teachers#new'
+#   post '/student_login', to: 'students#new'
+#   post '/teacher_logout', to: 'students#new'
+#   post '/student_logout', to: 'students#new'
+  
+  get '/signup' => 'teachers#new'
+  post '/teachers' => 'teachers#create'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#logout'
+  
+  
+  get '/signup-student' => 'students#new'
+  post '/students' => 'students#create'
+  
+  get '/login-student' => 'sessions#new'
+  post '/login-student' => 'sessions#create'
+  get '/logout-student' => 'sessions#destroy'
+  
+end 
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
@@ -58,4 +75,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+

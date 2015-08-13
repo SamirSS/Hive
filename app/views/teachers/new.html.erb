@@ -1,0 +1,17 @@
+<!-- <form method="POST" action="/teacher_sign_up">
+      <input type="text" name="name" placeholder="Teacher Name"> <br>
+      <input type="text" name="password" placeholder="Password">
+      <br><br>
+      <input type="submit">
+</form> -->
+
+<h1>Signup</h1>
+
+<%= form_for :teacher, url: '/teachers' do |f| %>
+  Name: <%= f.text_field :name %>
+  Email: <%= f.text_field :email %>
+Password: <%= f.password_field :password_digest %>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+  <%= f.submit "Submit" %>
+
+<% end %>

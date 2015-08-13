@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20150812144457) do
 
   create_table "teachers", force: :cascade do |t|
     t.string   "name"
+    t.string   "email"
     t.string   "password_digest"
     t.integer  "school_id"
     t.datetime "created_at",      null: false
