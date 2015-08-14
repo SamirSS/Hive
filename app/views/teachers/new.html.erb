@@ -7,11 +7,10 @@
 
 <h1>Signup</h1>
 
-<%= form_for :teacher, url: '/teachers' do |f| %>
+<%= form_for :teacher, url: {controller: 'teachers', action: 'create'} do |f| %>
   Name: <%= f.text_field :name %>
   Email: <%= f.text_field :email %>
-Password: <%= f.password_field :password_digest %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
+Password: <%= f.password_field :password %>
   <%= f.submit "Submit" %>
 
 <% end %>

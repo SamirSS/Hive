@@ -1,4 +1,3 @@
-require 'bcrypt'
 
 class TeachersController < ApplicationController
   
@@ -8,7 +7,9 @@ class TeachersController < ApplicationController
   
   def create
 #     @teacher = Teacher.find_by name: params[:name]
-    @teacher = Teacher.new(:name => params[:name] , :password => params[:password])
+    print params
+    print 'yeet'
+    @teacher = Teacher.new(:name => params[:name], :email => params[:email], :password => params[:password])
     @teacher.save
 #     if @teacher.save
     session[:user_id] = @teacher.id
@@ -20,7 +21,7 @@ class TeachersController < ApplicationController
   private
   
   def teacher_params
-    params.require(:teacher).permit(:name, :email, :password, :password_confirmation)
+    params.require(:teacher).permit(:name, :email, :password)
     
     if @teacher
       session[:user_id] = @teacher
